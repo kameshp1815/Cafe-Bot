@@ -8,7 +8,7 @@ password = quote_plus(settings.db_password)
 
 DATABASE_URL = (
     f"postgresql+psycopg2://{settings.db_username}:{password}"
-    f"@127.0.0.1:{settings.db_port}/{settings.db_name}"
+    f"@{settings.db_host}:{settings.db_port}/{settings.db_name}?sslmode=require"
 )
 
 engine = create_engine(DATABASE_URL)
